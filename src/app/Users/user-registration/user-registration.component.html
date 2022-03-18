@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-6 m-auto">
+        <div class="card m-auto">
+            <div class="card-header bg-danger text-white">
+                <h3>SignUp</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" formControlName="userName">
+                        <!-- <span class="error-block"
+                         *ngIf="!registrationForm.get('userName').valid && registrationForm.get('userName').touched">
+                            Please Enter Name.
+                        </span> -->
+                        <span class="error-block"*ngIf="!UserName.valid && (UserName.touched || userSubmitted)">
+                            Please Enter Name.
+                        </span>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">Email</label>
+                        <input type="email" class="form-control" formControlName="userEmail">
+                        <span class="error-block" *ngIf="!UserEmail.valid && (UserEmail.touched || userSubmitted)">
+                            <span *ngIf="UserEmail.hasError('required')">
+                                Please Provide an Email Address
+                            </span>
+                            <span *ngIf="UserEmail.hasError('email')">
+                                Please Provide a Valid Email Address
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">Password</label>
+                        <input type="password" class="form-control" formControlName="userPassword">
+                        <span class="error-block" *ngIf="!UserPassword.valid && (UserPassword.touched || userSubmitted)">
+                            <span *ngIf="UserPassword.errors['required']">
+                                Please set a Password
+                            </span>
+                            <span *ngIf="UserPassword.errors.minlength">
+                                Password should be of minium 8 characters long
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" formControlName="userConfirmPassword">
+                        <span class="error-block" *ngIf="!UserConfirmPassword.valid && (UserConfirmPassword.touched || userSubmitted)">
+                            <span *ngIf="UserConfirmPassword.hasError('required')">
+                                Please Confirm Password
+                            </span>
+                        </span>
+                        <span *ngIf="registrationForm.hasError('notmatched') && UserConfirmPassword.valid" class="error-block">
+                                Password not matched
+                        </span>
+                    </div>
+                    <div class="form-group col-12">
+                        <button type="submit" class="btn btn-success">SignUp</button>
+                        <button type="reset" class="btn btn-secondary ml-2">Cancel</button>
+                        <span class="ml-2">Already have an account?</span>
+                        <a class="ml-2" routerLink="/user/login"><u>LogIn here!</u></a>
+                    </div>
+                    <!-- <div class="alert alert-success" *ngIf="registrationForm.valid">
+                        <strong>Success!</strong> You have Successfully Registerd.
+                    </div>
+                    <div class="alert alert-danger" *ngIf="!registrationForm.valid ">
+                        <strong>SignUp Failed!</strong> Try Again.
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

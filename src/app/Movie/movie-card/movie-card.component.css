@@ -1,0 +1,50 @@
+ .card-moviePoster{
+    height: 300px;
+    width: 275px;
+    overflow: hidden;
+    /* position: relative; */
+} 
+.card-posterImg{
+    overflow:hidden;
+    position: relative; 
+}
+
+#cardfoot{
+    display: flex;
+    justify-content: space-between;
+}
+
+#img-wrapper{
+    overflow: hidden;
+}
+
+/* Zoom in transition */
+.card:hover{ /*Update to: brighten shhadow glow on hover*/
+    transform: scale(1.1,1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+    box-shadow: 0px 0px 30px 15px rgba(252, 44, 44, 0.973);
+
+    height: 500px;
+
+}
+/* Zoom out transition */
+.card{ /*Update to: dull the shadow glow on hover*/
+    height: 500px;
+    box-shadow: 0px 0px 20px 5px rgba(255, 36, 36, 0.589);
+    /* in order: x offset, y offset, blur size, spread size, color */
+    
+    transform: scale(1,1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.member-icon{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    margin: 0px 10px 10px 0px;
+    background-color: transparent;
+    border:none;
+    outline:none;
+}

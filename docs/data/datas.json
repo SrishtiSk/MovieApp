@@ -1,0 +1,116 @@
+[
+  {
+    "Id": 1,
+    "Name": "Shrek",
+    "Genere": "Fantasy",
+    "Popularity": 35876.76,
+    "VoteCount": 45,
+    "ReleaseDate": "01/03/2021",
+    "Rating": 6,
+    "Image": "poster1"
+  },
+  {
+    "Id": 2,
+    "Name": "PK",
+    "Genere": "Fantasy",
+    "Popularity": 287346.8,
+    "VoteCount": 87,
+    "ReleaseDate": "03/03/2022",
+    "Rating": 5,
+    "Image": "poster2"
+  },
+  {
+    "Id": 3,
+    "Name": "Sprited Away",
+    "Genere": "Anime",
+    "Popularity": 2324.2,
+    "VoteCount": 23,
+    "ReleaseDate": "01/20/2022",
+    "Rating": 2,
+    "Image": "poster_SpiritedAway"
+  },
+  {
+    "Id": 4,
+    "Name": "Weathering with You",
+    "Genere": "Anime",
+    "Popularity": 2865.51,
+    "VoteCount": 75,
+    "ReleaseDate": "06/04/2021",
+    "Rating": 8
+  },
+  {
+    "Id": 5,
+    "Name": "The Noteboook",
+    "Genere": "Romance",
+    "Popularity": 9874.76,
+    "VoteCount": 86,
+    "ReleaseDate": "02/28/2022",
+    "Rating": 4,
+    "Image": "poster_theNotebook"
+  },
+  {
+    "Id": 6,
+    "Name": "Colonia",
+    "Genere": "Romance",
+    "Popularity": 8768.56,
+    "VoteCount": 35,
+    "ReleaseDate": "01/12/1998",
+    "Rating": 7
+  },
+  {
+    "Id": 7,
+    "Name": "Joker",
+    "Genere": "Thriller",
+    "Popularity": 982747.3,
+    "VoteCount": 98,
+    "ReleaseDate": "07/18/2020",
+    "Rating": 10,
+    "Image": "poster_Joker"
+  },
+  {
+    "Id": 8,
+    "Name": "Bird Box",
+    "Genere": "Thriller",
+    "Popularity": 7456.87,
+    "VoteCount": 87,
+    "ReleaseDate": "04/02/2003",
+    "Rating": 3
+  },
+  {
+    "Id": 9,
+    "Name": "The Conjuring",
+    "Genere": "Horror",
+    "Popularity": 1568.76,
+    "VoteCount": 28,
+    "ReleaseDate": "04/15/2007",
+    "Rating": 2
+  },
+  {
+    "Id": 10,
+    "Name": "Annabelle",
+    "Genere": "Horror",
+    "Popularity": 2324.2,
+    "VoteCount": 83,
+    "ReleaseDate": "09/27/2005",
+    "Rating": 7,
+    "Image": "poster_Anabelle"
+  },
+  {
+    "Id": 11,
+    "Name": "Venom",
+    "Genere": "Action",
+    "Popularity": 26675.76,
+    "VoteCount": 98,
+    "ReleaseDate": "06/13/2002",
+    "Rating": 5
+  },
+  {
+    "Id": 12,
+    "Name": "Jumanji",
+    "Genere": "Action",
+    "Popularity": 655476.87,
+    "VoteCount": 37,
+    "ReleaseDate": "04/10/2010",
+    "Rating": 9
+  }
+]

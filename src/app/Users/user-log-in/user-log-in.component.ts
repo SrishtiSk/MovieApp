@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/Services/alertify.service';
 import { AuthenticateService } from 'src/app/Services/authenticate.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { AuthenticateService } from 'src/app/Services/authenticate.service';
 export class UserLogInComponent implements OnInit {
 
   constructor(private authService: AuthenticateService,
-          private router: Router) { }
+          private router: Router,
+          private alertify: AlertifyService) { }
 
    ngOnInit(): void {
   }
@@ -21,11 +23,11 @@ export class UserLogInComponent implements OnInit {
     const token = this.authService.authenticateUser(logInFrom.value);
     if(token){
       localStorage.setItem('token', token.userName);
-      //console.log('Log in Successful!');
+      this.alertify.success('Log in Successful!');
       this.router.navigate(['/movie-list']);
     }
     else {
-      console.log('Login failed');
+      this.alertify.error('Login failed');
     }
   }
 

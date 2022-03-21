@@ -9,15 +9,15 @@
           <option value="ReleaseDate">Date</option>
           <option value="Popularity">Popularity</option>
         </select>
+        <button type="button" (click)="onSortDirection()" class="btn btn-danger text-white">
+          <i *ngIf="SortDirection ==='desc'" class="fa fa-arrow-down"></i>
+          <i *ngIf="SortDirection ==='asc'" class="fa fa-arrow-up"></i>
+      </button>
         <div class="input-group-prepend">
             <button (click)="onClearSort()" class="btn btn-danger text-white" type="button">
                 <i class="fa fa-close"></i>
             </button>
         </div>
-        <button type="button" (click)="onSortDirection()" class="btn btn-danger text-white">
-            <i *ngIf="SortDirection ==='desc'" class="fa fa-arrow-down"></i>
-            <i *ngIf="SortDirection ==='asc'" class="fa fa-arrow-up"></i>
-        </button>
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -46,7 +46,6 @@
         <button type="button" (click)="onClearNameFilter()" class="btn btn-danger text-white">
           <i class="fa fa-close"></i>
         </button>
-        
     </div>
     <!-- <div class="input-group">
       <div class="input-group-prepend">
@@ -60,10 +59,7 @@
           <i class="fa fa-close"></i></button>
       </div>
     </div> -->
-    
 </div>
-
-
 
 <div class="row">
     <div *ngFor="let movie of Movies | filter:FilterGenere:'Genere' | filter:FilterName:'Name' | sort:[SortbyParam,onSortDirection]"

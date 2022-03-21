@@ -1,7 +1,9 @@
 import { getFileSystem } from '@angular/compiler-cli/src/ngtsc/file_system';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IUser } from 'src/app/Model/user';
+import { AlertifyService } from 'src/app/Services/alertify.service';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -14,7 +16,8 @@ export class UserRegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   user: IUser;
   userSubmitted: boolean;
-  constructor(private fBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private fBuilder: FormBuilder, private userService: UserService, 
+              private router : Router, private alertify :AlertifyService) { }
 
   ngOnInit(): void {
     // this.registrationForm = new FormGroup({
@@ -27,14 +30,15 @@ export class UserRegistrationComponent implements OnInit {
     // );
     this.createRegistrationForm();
   }
+
   createRegistrationForm(){
     this.registrationForm = this.fBuilder.group({
       userName: [null, Validators.required],
       userEmail: [null, [Validators.required, Validators.email]],
       userPassword: [null, [Validators.required, Validators.minLength(8)]],
       userConfirmPassword: [null, [Validators.required]]
-    }, {validators: this.PasswordMatchingValidator
-    });
+    }, {validators: this.PasswordMatchingValidator}
+    );
   }
 
   onSubmit(){
@@ -45,6 +49,11 @@ export class UserRegistrationComponent implements OnInit {
       this.userService.addUser(this.UserData()); //store the user in browser's local storage
       this.registrationForm.reset();
       this.userSubmitted = false;
+      this.alertify.success(' Congratulations, You are successfully registered');
+      this.router.navigate(['/user/login']);
+    }
+    else{
+      this.alertify.error('Kindly provide the required fields!');
     }
   }
 

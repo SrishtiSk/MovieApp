@@ -19,6 +19,7 @@ import { AuthenticateService } from './Services/authenticate.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
 import { SearchPipe } from './Pipes/search.pipe';
+import { AlertifyService } from './Services/alertify.service';
 
 const appRoutes: Routes =[
   { path:'', component: UserLogInComponent},
@@ -52,7 +53,12 @@ const appRoutes: Routes =[
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ MovieService, UserService, AuthenticateService ],
+  providers: [
+     MovieService,
+     UserService,
+     AuthenticateService,
+     AlertifyService
+    ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
